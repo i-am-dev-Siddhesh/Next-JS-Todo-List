@@ -9,7 +9,7 @@
 
 ## Demo
 
-- Live demo: https://supabase-nextjs-todo-list.vercel.app/
+- Live demo: https://next-js-todo-list-three.vercel.app/
 
 ## Deploy with Vercel
 
