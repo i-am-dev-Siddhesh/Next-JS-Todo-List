@@ -1,6 +1,7 @@
 import { Auth } from "@supabase/ui";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { CustomLoader } from "../components/CustomLoader";
 import TodoList from "../components/TodoList";
 import { supabase } from "../lib/initSupabase";
 
@@ -20,7 +21,7 @@ export default function IndexPage() {
     }, [userInfo]);
 
     if (isLoading) {
-        return "isLaoding";
+        return <CustomLoader />;
     }
     return (
         <div className="w-full h-full bg-gray-300">
@@ -28,7 +29,7 @@ export default function IndexPage() {
                 className="w-full h-full flex flex-col justify-center items-center p-4"
                 style={{ minWidth: 250, maxWidth: 600, margin: "auto" }}
             >
-                <TodoList user={supabase.auth.user()} />
+                <TodoList user={user} />
                 <button
                     className="btn-black w-full mt-12"
                     onClick={async () => {

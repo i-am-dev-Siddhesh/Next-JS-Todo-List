@@ -2,6 +2,7 @@ import { supabase } from "../lib/initSupabase";
 import { Auth } from "@supabase/ui";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { CustomLoader } from "../components/CustomLoader";
 
 export default function IndexPage() {
     const router = useRouter();
@@ -11,14 +12,13 @@ export default function IndexPage() {
 
     useEffect(() => {
         if (userInfo?.user) {
-            setUser(userInfo.user);
             router.push("/");
         }
         setIsLoading(false);
     }, [userInfo]);
 
     if (isLoading) {
-        return "isLaoding";
+        return <CustomLoader/>;
     }
     return (
         <div className="w-full h-full bg-gray-300">
