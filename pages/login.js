@@ -26,6 +26,7 @@ export default function IndexPage() {
                 className="m-auto h-full flex justify-center items-center p-4"
                 style={{
                     width: "400px",
+                    margin:"auto"
                 }}
             >
                 <Auth
